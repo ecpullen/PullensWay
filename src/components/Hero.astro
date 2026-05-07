@@ -1,0 +1,40 @@
+---
+import { withBase } from "../lib/paths";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+}
+
+const { eyebrow, title, intro } = Astro.props;
+---
+
+<section class="hero">
+  <div class="shell hero__grid">
+    <div class="hero__content">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="hero__intro">{intro}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href={withBase("/guide")}>Browse the guide</a>
+        <a class="button button--ghost" href={withBase("/about")}>Read the story</a>
+      </div>
+    </div>
+
+    <div class="hero__panel">
+      <div class="hero-card">
+        <p class="hero-card__label">The tone this site is built for</p>
+        <ul>
+          <li>Thoughtful local recommendations</li>
+          <li>Practical notes without clutter</li>
+          <li>Room for story, memory, and place</li>
+        </ul>
+      </div>
+      <div
+        class="hero-landscape"
+        style={`background-image: linear-gradient(180deg, rgba(255, 247, 232, 0.3), rgba(255, 247, 232, 0)), url('${withBase("/images/hero-landscape.svg")}')`}
+        aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import { withBase } from "../lib/paths";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/guide", label: "Guide" },
+  { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" }
+];
+
+function isActive(href: string) {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href={withBase("/")}>
+      <span class="brand__mark">PW</span>
+      <span class="brand__text">
+        <strong>Pullen's Way</strong>
+        <small>Guide & field notes</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a class:list={[{ active: isActive(link.href) }]} href={withBase(link.href)}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

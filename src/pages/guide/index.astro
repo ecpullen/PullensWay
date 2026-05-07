@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GuideCard from "../../components/GuideCard.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import { getGuideEntries } from "../../lib/content";
+
+const guides = await getGuideEntries();
+---
+
+<BaseLayout title="Guide Entries | Pullen's Way" description="Browse the guide entries and route notes.">
+  <section class="page-hero shell">
+    <p class="eyebrow">The Guide</p>
+    <h1>Browse the entries</h1>
+    <p class="page-hero__intro">
+      Each recommendation is built to hold both practical notes and a little atmosphere, so the site can feel useful without becoming sterile.
+    </p>
+  </section>
+
+  <section class="shell section">
+    <SectionHeading
+      eyebrow="Current Structure"
+      title="A repeatable format for routes, stops, meals, landmarks, and detours."
+      intro="These placeholder entries are ready to be replaced with the real content from your dad's guide."
+    />
+
+    <div class="guide-grid">
+      {guides.map((entry) => <GuideCard entry={entry} />)}
+    </div>
+  </section>
+</BaseLayout>

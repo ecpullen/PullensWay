@@ -1,0 +1,142 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: site
+    label: Site Settings
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: siteName
+        label: Site name
+        type: string
+      - name: siteTitle
+        label: Browser title
+        type: string
+      - name: tagline
+        label: Tagline
+        type: text
+      - name: heroEyebrow
+        label: Hero eyebrow
+        type: string
+      - name: heroTitle
+        label: Hero title
+        type: string
+      - name: heroIntro
+        label: Hero intro
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: announcement
+        label: Announcement
+        type: string
+      - name: contactEmail
+        label: Contact email
+        type: string
+      - name: phone
+        label: Phone
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: mapEmbedUrl
+        label: Map embed URL
+        type: string
+      - name: socialLinks
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - name: label
+            type: string
+          - name: href
+            type: string
+
+  - name: featured
+    label: Featured Highlights
+    type: file
+    path: src/data/featured.json
+    format: json
+    fields:
+      - name: items
+        label: Highlights
+        type: object
+        list: true
+        fields:
+          - name: title
+            type: string
+          - name: summary
+            type: text
+          - name: href
+            type: string
+          - name: accent
+            type: string
+
+  - name: pages
+    label: Core Pages
+    type: collection
+    path: src/content/pages
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - name: title
+        type: string
+      - name: slug
+        type: string
+      - name: description
+        type: text
+      - name: intro
+        type: text
+      - name: body
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+          path: public/images/pages
+          rename: true
+
+  - name: guides
+    label: Guide Entries
+    type: collection
+    path: src/content/guides
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - name: title
+        type: string
+      - name: slug
+        type: string
+      - name: summary
+        type: text
+      - name: region
+        type: string
+      - name: bestFor
+        type: string
+      - name: tags
+        type: string
+        list: true
+      - name: image
+        type: string
+      - name: mapLabel
+        type: string
+      - name: mapUrl
+        type: string
+      - name: body
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+          path: public/images/guides
+          rename: true
+
+settings:
+  hide: true
+  content:
+    merge: true

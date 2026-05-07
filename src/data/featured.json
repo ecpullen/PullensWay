@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "title": "Route Notes",
+      "summary": "A calmer way to present journeys, timing, and practical details without overwhelming the reader.",
+      "href": "/guide",
+      "accent": "Clay"
+    },
+    {
+      "title": "Trusted Recommendations",
+      "summary": "Highlight the stops, landmarks, or experiences that deserve more than a quick mention.",
+      "href": "/resources",
+      "accent": "Pine"
+    },
+    {
+      "title": "Personal Storytelling",
+      "summary": "Bring your dad's voice forward with room for history, memory, and the reasons a place matters.",
+      "href": "/about",
+      "accent": "Wheat"
+    }
+  ]
+}

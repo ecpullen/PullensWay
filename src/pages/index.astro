@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import FeatureCards from "../components/FeatureCards.astro";
+import GuideCard from "../components/GuideCard.astro";
+import site from "../data/site.json";
+import { getGuideEntries } from "../lib/content";
+import { withBase } from "../lib/paths";
+
+const guides = (await getGuideEntries()).slice(0, 3);
+---
+
+<BaseLayout title={site.siteTitle} description={site.tagline}>
+  <Hero eyebrow={site.heroEyebrow} title={site.heroTitle} intro={site.heroIntro} />
+
+  <section class="shell section">
+    <div class="announcement">{site.announcement}</div>
+    <SectionHeading
+      eyebrow="A More Polished Foundation"
+      title="Designed to feel trustworthy, warm, and personal from the first scroll."
+      intro="The homepage introduces the guide with stronger hierarchy, intentional atmosphere, and room for your dad's voice to lead."
+    />
+    <FeatureCards />
+  </section>
+
+  <section class="shell section section--split">
+    <div>
+      <SectionHeading
+        eyebrow="How It Reads"
+        title="Guide entries balance atmosphere with practical detail."
+        intro="Each stop or route can carry a quick summary, tags, map link, and a fuller write-up without looking cluttered."
+      />
+      <a class="button button--secondary" href={withBase("/guide")}>See all guide entries</a>
+    </div>
+
+    <div class="stack">
+      {guides.map((entry) => <GuideCard entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="shell section">
+    <div class="callout">
+      <div>
+        <p class="eyebrow">Simple To Maintain</p>
+        <h2>Edit text, guide entries, and images through Git-backed CMS screens.</h2>
+      </div>
+      <p>
+        The build is intentionally content-driven, so once the real copy comes over from Google Sites,
+        updating the site is mostly a matter of editing entries instead of touching layout code.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

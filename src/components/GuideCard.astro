@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  entry: CollectionEntry<"guides">;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="guide-card">
+  <img src={withBase(entry.data.image)} alt="" loading="lazy" />
+  <div class="guide-card__body">
+    <p class="guide-card__meta">{entry.data.region} · {entry.data.bestFor}</p>
+    <h3>{entry.data.title}</h3>
+    <p>{entry.data.summary}</p>
+    <ul class="tag-list" aria-label="Tags">
+      {entry.data.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+    <a class="text-link" href={withBase(`/guide/${entry.slug}`)}>Read entry</a>
+  </div>
+</article>

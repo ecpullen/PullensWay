@@ -1,0 +1,32 @@
+---
+import site from "../data/site.json";
+import { withBase } from "../lib/paths";
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__grid">
+    <div>
+      <p class="footer-kicker">Pullen's Way</p>
+      <h2>A calmer, more memorable way to guide people.</h2>
+      <p>{site.tagline}</p>
+    </div>
+
+    <div>
+      <p class="footer-kicker">Explore</p>
+      <ul class="footer-links">
+        <li><a href={withBase("/about")}>About</a></li>
+        <li><a href={withBase("/guide")}>Guide entries</a></li>
+        <li><a href={withBase("/resources")}>Resources</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-kicker">Contact</p>
+      <ul class="footer-links">
+        <li><a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a></li>
+        <li>{site.phone}</li>
+        <li>{site.location}</li>
+      </ul>
+    </div>
+  </div>
+</footer>

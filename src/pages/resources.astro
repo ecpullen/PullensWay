@@ -1,0 +1,38 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../data/site.json";
+import { getPageBySlug } from "../lib/content";
+
+const page = await getPageBySlug("resources");
+
+if (!page) {
+  throw new Error("Resources page content is missing.");
+}
+
+const { Content } = await render(page);
+---
+
+<BaseLayout title={`${page.data.title} | Pullen's Way`} description={page.data.description}>
+  <section class="page-hero shell">
+    <p class="eyebrow">Plan With Confidence</p>
+    <h1>{page.data.title}</h1>
+    <p class="page-hero__intro">{page.data.intro}</p>
+  </section>
+
+  <section class="shell resource-grid">
+    <article class="prose-card">
+      <Content />
+    </article>
+
+    <aside class="map-card">
+      <p class="eyebrow">Map and Route Layer</p>
+      <h2>Drop in your working map once the real route is ready.</h2>
+      <iframe
+        title="Pullen's Way Map"
+        src={site.mapEmbedUrl}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </aside>
+  </section>
+</BaseLayout>

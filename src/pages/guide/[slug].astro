@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/paths";
+
+export async function getStaticPaths() {
+  const guides = await getCollection("guides");
+
+  return guides.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={`${entry.data.title} | Pullen's Way`} description={entry.data.summary}>
+  <section class="detail-hero shell">
+    <div>
+      <p class="eyebrow">{entry.data.region}</p>
+      <h1>{entry.data.title}</h1>
+      <p class="page-hero__intro">{entry.data.summary}</p>
+      <div class="detail-actions">
+        <a class="button button--primary" href={entry.data.mapUrl} target="_blank" rel="noreferrer">
+          {entry.data.mapLabel}
+        </a>
+        <a class="button button--ghost" href={withBase("/guide")}>Back to guide</a>
+      </div>
+    </div>
+
+    <img class="detail-image" src={withBase(entry.data.image)} alt="" />
+  </section>
+
+  <section class="shell detail-grid">
+    <aside class="detail-sidebar">
+      <div class="stat-card">
+        <span>Best for</span>
+        <strong>{entry.data.bestFor}</strong>
+      </div>
+      <div class="stat-card">
+        <span>Tags</span>
+        <ul class="tag-list">
+          {entry.data.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      </div>
+    </aside>
+
+    <article class="prose-card">
+      <Content />
+    </article>
+  </section>
+</BaseLayout>

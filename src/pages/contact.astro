@@ -1,0 +1,38 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../data/site.json";
+import { getPageBySlug } from "../lib/content";
+
+const page = await getPageBySlug("contact");
+
+if (!page) {
+  throw new Error("Contact page content is missing.");
+}
+
+const { Content } = await render(page);
+---
+
+<BaseLayout title={`${page.data.title} | Pullen's Way`} description={page.data.description}>
+  <section class="page-hero shell">
+    <p class="eyebrow">Reach Out</p>
+    <h1>{page.data.title}</h1>
+    <p class="page-hero__intro">{page.data.intro}</p>
+  </section>
+
+  <section class="shell contact-grid">
+    <article class="prose-card">
+      <Content />
+    </article>
+
+    <aside class="contact-card">
+      <p class="eyebrow">Direct Contact</p>
+      <h2>Use this panel for the details readers need most.</h2>
+      <ul class="contact-list">
+        <li><strong>Email</strong><a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a></li>
+        <li><strong>Phone</strong><span>{site.phone}</span></li>
+        <li><strong>Location</strong><span>{site.location}</span></li>
+      </ul>
+    </aside>
+  </section>
+</BaseLayout>

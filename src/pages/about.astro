@@ -1,0 +1,25 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPageBySlug } from "../lib/content";
+
+const page = await getPageBySlug("about");
+
+if (!page) {
+  throw new Error("About page content is missing.");
+}
+
+const { Content } = await render(page);
+---
+
+<BaseLayout title={`${page.data.title} | Pullen's Way`} description={page.data.description}>
+  <section class="page-hero shell">
+    <p class="eyebrow">About the Guide</p>
+    <h1>{page.data.title}</h1>
+    <p class="page-hero__intro">{page.data.intro}</p>
+  </section>
+
+  <section class="shell prose-card">
+    <Content />
+  </section>
+</BaseLayout>

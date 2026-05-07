@@ -1,0 +1,23 @@
+{
+  "siteName": "Pullen's Way",
+  "siteTitle": "Pullen's Way | A Grounded Guide to Meaningful Places",
+  "tagline": "An honest, place-first guide shaped by memory, route, and local character.",
+  "heroEyebrow": "Field Notes and Friendly Guidance",
+  "heroTitle": "A quieter, more personal guide to the places worth slowing down for.",
+  "heroIntro": "Built as a thoughtful companion for exploring roads, landmarks, stops, and stories with a little more texture than a standard travel page. Replace this with your dad's real introduction once it's ready, and the structure will hold.",
+  "announcement": "Fresh structure, warmer design, and simple editing are now built in.",
+  "contactEmail": "hello@pullensway.com",
+  "phone": "(555) 123-4567",
+  "location": "Based in the American South",
+  "mapEmbedUrl": "https://www.google.com/maps/d/embed?mid=1X0Jj2n0xgTgT9vP3b4l0vE9wJ7Q&ehbc=2E312F",
+  "socialLinks": [
+    {
+      "label": "Email",
+      "href": "mailto:hello@pullensway.com"
+    },
+    {
+      "label": "Google Site",
+      "href": "https://sites.google.com/view/pullensway"
+    }
+  ]
+}
