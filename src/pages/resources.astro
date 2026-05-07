@@ -5,6 +5,9 @@ import site from "../data/site.json";
 import { getPageBySlug } from "../lib/content";
 
 const page = await getPageBySlug("resources");
+const hasWorkingMap =
+  Boolean(site.mapEmbedUrl) &&
+  !site.mapEmbedUrl.includes("1X0Jj2n0xgTgT9vP3b4l0vE9wJ7Q");
 
 if (!page) {
   throw new Error("Resources page content is missing.");
@@ -27,12 +30,36 @@ const { Content } = await render(page);
 
     <aside class="map-card">
       <p class="eyebrow">Meeting Areas and Launches</p>
-      <h2>Use this section for trailheads, launch points, and trip region maps.</h2>
-      <iframe
-        title="Pullen's Way Map"
-        src={site.mapEmbedUrl}
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="map-card__title">Trailheads, launch points, and trip regions.</h2>
+      <p class="map-card__intro">
+        Add the real boating launches, fishing access points, and trail meeting areas here once your working map is ready.
+      </p>
+
+      {
+        hasWorkingMap ? (
+          <iframe
+            title="Pullen's Way Map"
+            src={site.mapEmbedUrl}
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        ) : (
+          <div class="map-placeholder">
+            <div class="map-placeholder__badge">Map setup in progress</div>
+            <h3>Use this area for your real trip map once launch points are finalized.</h3>
+            <p>
+              For now, this card avoids showing a broken embed. Replace the placeholder map URL in
+              `src/data/site.json` with a real Google Maps or Google My Maps embed link when you have one.
+            </p>
+            <ul class="tag-list" aria-label="Map use cases">
+              <li>Boat Launches</li>
+              <li>Trailheads</li>
+              <li>Fishing Access</li>
+              <li>Meeting Spots</li>
+            </ul>
+            <a class="button button--secondary" href={`mailto:${site.contactEmail}`}>Ask for meeting details</a>
+          </div>
+        )
+      }
     </aside>
   </section>
 
