@@ -1,24 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
   <defs>
     <linearGradient id="sky" x1="0%" x2="0%" y1="0%" y2="100%">
-      <stop offset="0%" stop-color="#f8ead0"/>
-      <stop offset="100%" stop-color="#ead6b1"/>
+      <stop offset="0%" stop-color="#d9ecec"/>
+      <stop offset="100%" stop-color="#aac6c5"/>
     </linearGradient>
-    <linearGradient id="hill1" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" stop-color="#8a7153"/>
-      <stop offset="100%" stop-color="#5c6b52"/>
+    <linearGradient id="ridge" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#486f66"/>
+      <stop offset="100%" stop-color="#284e4d"/>
     </linearGradient>
-    <linearGradient id="hill2" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" stop-color="#b18c62"/>
-      <stop offset="100%" stop-color="#7f5f3c"/>
+    <linearGradient id="water" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#3f7b95"/>
+      <stop offset="100%" stop-color="#204b63"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="900" fill="url(#sky)"/>
-  <circle cx="870" cy="190" r="72" fill="#fff4db"/>
-  <path d="M0 470c117 62 223 73 319 31 79-35 151-48 215-38 102 17 177 76 272 71 116-6 224-78 394-26v392H0V470z" fill="url(#hill1)"/>
-  <path d="M0 563c157 29 269 14 395-41 130-57 234-55 349 10 89 50 178 68 456 26v342H0V563z" fill="url(#hill2)"/>
-  <path d="M378 420c18 0 33 15 33 33v145h-18v-76h-31v76h-19V453c0-18 15-33 35-33z" fill="#5d4330"/>
-  <rect x="352" y="465" width="50" height="18" rx="9" fill="#f4e8d1"/>
-  <path d="M856 387c14 7 24 24 24 45v170h-17V507h-74v95h-18V432c0-20 9-38 25-45 7 20 18 32 30 32 12 0 23-12 30-32z" fill="#6b533e"/>
-  <path d="M723 636c104-12 192 41 264 41 66 0 122-26 154-53-15 77-87 163-224 191-177 36-329-39-385-112 42-30 104-57 191-67z" fill="#3f493f" opacity=".32"/>
+  <circle cx="874" cy="153" r="58" fill="#f2e2a6"/>
+  <path d="M0 401c121 79 220 104 346 73 94-24 163-77 264-77 93 0 156 40 238 40 119 0 190-48 352-23v486H0V401z" fill="url(#ridge)"/>
+  <path d="M0 558c110-18 233-6 352 44 110 46 210 76 352 76 177 0 313-59 496-138v360H0V558z" fill="url(#water)"/>
+  <path d="M148 603c114-40 266-35 392 34 124 68 211 82 333 75-86 67-213 115-362 115-159 0-299-42-363-100z" fill="#19343b" opacity=".34"/>
+  <path d="M506 524c34 0 67 13 93 35l-26 18c-19-16-42-24-67-24-39 0-69 16-108 55l-20-19c42-43 79-65 128-65z" fill="#f1d18f"/>
+  <path d="M626 575c0 24-76 42-170 42s-170-18-170-42 76-42 170-42 170 18 170 42z" fill="#3b2417"/>
 </svg>

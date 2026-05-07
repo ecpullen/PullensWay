@@ -1,22 +1,22 @@
 {
   "items": [
     {
-      "title": "Route Notes",
-      "summary": "A calmer way to present journeys, timing, and practical details without overwhelming the reader.",
+      "title": "Guided Fishing",
+      "summary": "Showcase trolling, lake fishing, bank access, seasonal patterns, and what guests can expect before launch.",
       "href": "/guide",
-      "accent": "Clay"
+      "accent": "Water"
     },
     {
-      "title": "Trusted Recommendations",
-      "summary": "Highlight the stops, landmarks, or experiences that deserve more than a quick mention.",
+      "title": "Trail Riding",
+      "summary": "Feature side-by-side trail rides, route difficulty, scenic stops, and gear or safety notes.",
       "href": "/resources",
-      "accent": "Pine"
+      "accent": "Timber"
     },
     {
-      "title": "Personal Storytelling",
-      "summary": "Bring your dad's voice forward with room for history, memory, and the reasons a place matters.",
+      "title": "Boat and Canoe Trips",
+      "summary": "Give boating and canoe outings a clear home with launch details, conditions, and ideal trip types.",
       "href": "/about",
-      "accent": "Wheat"
+      "accent": "Northwind"
     }
   ]
 }

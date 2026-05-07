@@ -15,7 +15,7 @@ const { Content } = await render(page);
 
 <BaseLayout title={`${page.data.title} | Pullen's Way`} description={page.data.description}>
   <section class="page-hero shell">
-    <p class="eyebrow">Plan With Confidence</p>
+    <p class="eyebrow">Trip Prep</p>
     <h1>{page.data.title}</h1>
     <p class="page-hero__intro">{page.data.intro}</p>
   </section>
@@ -26,8 +26,8 @@ const { Content } = await render(page);
     </article>
 
     <aside class="map-card">
-      <p class="eyebrow">Map and Route Layer</p>
-      <h2>Drop in your working map once the real route is ready.</h2>
+      <p class="eyebrow">Meeting Areas and Launches</p>
+      <h2>Use this section for trailheads, launch points, and trip region maps.</h2>
       <iframe
         title="Pullen's Way Map"
         src={site.mapEmbedUrl}

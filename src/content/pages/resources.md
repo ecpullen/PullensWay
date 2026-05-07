@@ -1,19 +1,18 @@
 ---
 title: Resources and Useful Links
-slug: resources
-description: Gather maps, planning notes, practical links, and helpful reference material in one place.
-intro: A clean home for logistics, links, and supporting material.
+description: Keep launch info, trail notes, packing guidance, waivers, maps, and planning details in one place.
+intro: This page should help guests get ready before they arrive.
 ---
-This page is built to hold the practical side of the guide: maps, opening-hour links, planning notes, reservation pages, and any outside references that make a trip easier.
+This page is built for the practical side of the business: maps, meeting locations, weather or water-condition links, packing guidance, and any forms guests should review before their trip.
 
 ## Good fits for this section
 
-- Custom Google Maps links
-- Seasonal notes
-- Packing or preparation tips
-- Ticketing or reservation links
-- Downloadable checklists or route summaries
+- Launch locations and trailhead links
+- Seasonal fishing or ice notes
+- Life jacket, clothing, or cooler recommendations
+- Waivers, payment notes, and booking policies
+- Trip checklists for boating, trail rides, or canoe days
 
 ## Writing tip
 
-Keep the surrounding copy brief and useful. The goal is to reduce friction for the visitor, especially on mobile.
+Keep this section direct and practical. Guests should be able to skim it quickly from their phone before heading out.

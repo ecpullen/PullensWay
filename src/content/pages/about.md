@@ -1,18 +1,17 @@
 ---
 title: About Pullen's Way
-slug: about
-description: Learn the story behind the guide and the perspective shaping each recommendation.
-intro: This page is designed for the why behind the guide, not just the logistics.
+description: Introduce the guide service, the outdoor experience behind it, and what guests can expect.
+intro: This page should explain the experience level, guiding style, and kind of adventures guests are signing up for.
 ---
-Pullen's Way works best when it feels like guidance from a person you trust rather than a list of generic tips. Use this space to explain your dad's connection to the route, region, or traditions behind the site.
+Pullen's Way is best introduced as an outdoor guiding service built around time on the water and on the trail. Use this page to explain your dad's background, what he guides, and why guests enjoy heading out with him.
 
-## What this page can do well
+## What this page should cover
 
-- Explain how the guide began
-- Clarify what kind of places or experiences matter most
-- Set expectations for the tone of the guide
-- Build trust before readers dive into recommendations
+- The kinds of trips offered
+- Years of local knowledge on lakes, trails, or seasonal conditions
+- The pace and style of each outing
+- Whether beginners, families, or experienced outdoorsmen are the best fit
 
-## Suggested additions
+## Strong additions
 
-Add a short origin story, a photograph, and a few lines about what makes this guide different from larger travel sites. Readers respond to specificity: what to notice, when to go, and why the place stays with you.
+Add a photo in the field, a short owner introduction, and a clear explanation of how your trips differ from a generic rental or self-guided day.
