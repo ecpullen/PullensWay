@@ -18,6 +18,6 @@ const { entry } = Astro.props;
     <ul class="tag-list" aria-label="Tags">
       {entry.data.tags.map((tag) => <li>{tag}</li>)}
     </ul>
-    <a class="text-link" href={withBase(`/guide/${entry.slug}`)}>Read entry</a>
+    <a class="text-link" href={withBase(`/guide/${entry.slug}`)}>View trip details</a>
   </div>
 </article>

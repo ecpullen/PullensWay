@@ -26,7 +26,7 @@ const { Content } = await render(entry);
         <a class="button button--primary" href={entry.data.mapUrl} target="_blank" rel="noreferrer">
           {entry.data.mapLabel}
         </a>
-        <a class="button button--ghost" href={withBase("/guide")}>Back to guide</a>
+        <a class="button button--ghost" href={withBase("/contact")}>Ask about this trip</a>
       </div>
     </div>
 
@@ -40,15 +40,32 @@ const { Content } = await render(entry);
         <strong>{entry.data.bestFor}</strong>
       </div>
       <div class="stat-card">
-        <span>Tags</span>
+        <span>Activities</span>
         <ul class="tag-list">
           {entry.data.tags.map((tag) => <li>{tag}</li>)}
         </ul>
+      </div>
+      <div class="stat-card">
+        <span>Next step</span>
+        <strong>Confirm dates, group size, and conditions before booking.</strong>
       </div>
     </aside>
 
     <article class="prose-card">
       <Content />
     </article>
+  </section>
+
+  <section class="shell section">
+    <div class="callout">
+      <div>
+        <p class="eyebrow">Trip Page Upgrade Path</p>
+        <h2>This layout is ready for real photos, pricing, trip length, and gear notes.</h2>
+      </div>
+      <p>
+        Once you send the final business info, each trip page can become a polished sales page rather than a placeholder sample.
+        <a class="text-link" href={withBase("/guide")}> Back to all trips</a>.
+      </p>
+    </div>
   </section>
 </BaseLayout>

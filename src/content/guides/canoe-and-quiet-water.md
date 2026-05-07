@@ -1,6 +1,5 @@
 ---
 title: Canoe and Quiet Water Trip
-slug: canoe-and-quiet-water-trip
 summary: A slower guided paddle focused on calm water, scenery, and a relaxed outdoor experience.
 region: Backwater Route
 bestFor: Couples, families, and easygoing groups
@@ -12,7 +11,7 @@ image: /images/guide-canoe.svg
 mapLabel: View paddle route
 mapUrl: https://maps.google.com
 ---
-This is a good template for canoe outings, slower boat days, or wildlife-focused trips. It should explain the pace, water conditions, and how much physical effort guests should expect.
+This sample page is set up for guests who want a calmer outing on the water without losing the feeling of a real outdoor adventure. It should explain pace, water conditions, scenery, and how active the trip feels.
 
 ## Useful details
 
@@ -20,3 +19,7 @@ This is a good template for canoe outings, slower boat days, or wildlife-focused
 - Minimum age or experience guidance
 - What stays dry and what might get wet
 - Whether photography and wildlife viewing are common parts of the trip
+
+## Good sales copy to add later
+
+Add the real route, whether paddles and life jackets are provided, and what kind of scenery or wildlife guests usually see.

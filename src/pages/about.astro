@@ -2,6 +2,7 @@
 import { render } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getPageBySlug } from "../lib/content";
+import { withBase } from "../lib/paths";
 
 const page = await getPageBySlug("about");
 
@@ -19,7 +20,53 @@ const { Content } = await render(page);
     <p class="page-hero__intro">{page.data.intro}</p>
   </section>
 
-  <section class="shell prose-card">
-    <Content />
+  <section class="shell section about-grid">
+    <article class="prose-card">
+      <Content />
+    </article>
+
+    <aside class="stack">
+      <div class="stat-card">
+        <span>What this brand should communicate</span>
+        <strong>Safe, experienced, outdoors-first guiding.</strong>
+      </div>
+      <div class="stat-card">
+        <span>Ideal guest expectations</span>
+        <ul class="tag-list">
+          <li>Fishing Trips</li>
+          <li>Trail Riding</li>
+          <li>Boating</li>
+          <li>Canoeing</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="shell section">
+    <div class="feature-grid feature-grid--two">
+      <article class="feature-card">
+        <span class="feature-card__accent">Local Water Knowledge</span>
+        <h3>Use this block for lakes, fish patterns, launch areas, and seasonal know-how.</h3>
+        <p>It should reassure guests that the trip is guided by actual experience rather than a generic itinerary.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-card__accent">Trail Confidence</span>
+        <h3>Explain the style of riding, terrain awareness, and how the day is paced.</h3>
+        <p>This is a good place to talk about safety, route familiarity, and what makes the ride fun for guests.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="shell section">
+    <div class="callout">
+      <div>
+        <p class="eyebrow">Ready To Personalize</p>
+        <h2>Replace this page with your dad's real background, experience, and service area.</h2>
+      </div>
+      <p>
+        Once you have the final writeup, this page should become the trust-building page for the business.
+        <a class="text-link" href={withBase("/contact")}> Ask about a trip</a>.
+      </p>
+    </div>
   </section>
 </BaseLayout>

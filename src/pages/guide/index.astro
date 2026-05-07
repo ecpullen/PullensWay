@@ -10,7 +10,7 @@ const guides = await getGuideEntries();
 <BaseLayout title="Trip Options | Pullen's Way" description="Browse guided fishing trips, trail rides, boating outings, canoe trips, and seasonal adventures.">
   <section class="page-hero shell">
     <p class="eyebrow">Trip Options</p>
-    <h1>Explore the experiences</h1>
+    <h1>Explore the trip lineup</h1>
     <p class="page-hero__intro">
       Each page is designed to explain the activity, the skill level, and the practical details guests need before they book.
     </p>
@@ -25,6 +25,16 @@ const guides = await getGuideEntries();
 
     <div class="guide-grid">
       {guides.map((entry) => <GuideCard entry={entry} />)}
+    </div>
+  </section>
+
+  <section class="shell section">
+    <div class="callout">
+      <div>
+        <p class="eyebrow">Built To Sell The Experience</p>
+        <h2>Each trip page can eventually include pricing, duration, meeting spots, and real photos.</h2>
+      </div>
+      <p>The current sample trips are themed correctly now, but they are still placeholders waiting for the final business details.</p>
     </div>
   </section>
 </BaseLayout>
