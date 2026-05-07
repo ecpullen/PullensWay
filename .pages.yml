@@ -4,79 +4,82 @@ media:
 
 content:
   - name: site
-    label: Site Settings
+    label: Homepage and Business Info
     type: file
     path: src/data/site.json
     format: json
     fields:
       - name: siteName
-        label: Site name
+        label: Business name
         type: string
       - name: siteTitle
-        label: Browser title
+        label: Browser tab title
         type: string
       - name: tagline
-        label: Tagline
+        label: Short tagline
         type: text
       - name: heroEyebrow
-        label: Hero eyebrow
+        label: Small text above homepage title
         type: string
       - name: heroTitle
-        label: Hero title
+        label: Main homepage heading
         type: string
       - name: heroIntro
-        label: Hero intro
+        label: Homepage intro paragraph
         type: rich-text
         options:
           format: markdown
           media: false
       - name: announcement
-        label: Announcement
+        label: Small banner text
         type: string
       - name: contactEmail
-        label: Contact email
+        label: Booking email
         type: string
       - name: phone
-        label: Phone
+        label: Booking phone
         type: string
       - name: location
-        label: Location
-        type: string
-      - name: mapEmbedUrl
-        label: Map embed URL
+        label: Service area
         type: string
       - name: socialLinks
-        label: Social links
+        label: Extra links
         type: object
         list: true
         fields:
           - name: label
+            label: Link name
             type: string
           - name: href
+            label: Link URL
             type: string
 
   - name: featured
-    label: Featured Highlights
+    label: Homepage Highlight Cards
     type: file
     path: src/data/featured.json
     format: json
     fields:
       - name: items
-        label: Highlights
+        label: Homepage cards
         type: object
         list: true
         fields:
           - name: title
+            label: Card title
             type: string
           - name: summary
+            label: Card text
             type: text
           - name: href
+            label: Button link
             type: string
           - name: accent
+            label: Small label
             type: string
 
   - name: pages
-    label: Core Pages
+    label: Main Pages
     type: collection
     path: src/content/pages
     format: yaml-frontmatter
@@ -85,12 +88,16 @@ content:
       primary: title
     fields:
       - name: title
+        label: Page title
         type: string
       - name: description
+        label: Short page description
         type: text
       - name: intro
+        label: Intro text near top of page
         type: text
       - name: body
+        label: Main page content
         type: rich-text
         options:
           format: markdown
@@ -99,7 +106,7 @@ content:
           rename: true
 
   - name: guides
-    label: Guide Entries
+    label: Trips
     type: collection
     path: src/content/guides
     format: yaml-frontmatter
@@ -108,23 +115,32 @@ content:
       primary: title
     fields:
       - name: title
+        label: Trip name
         type: string
       - name: summary
+        label: Short trip summary
         type: text
       - name: region
+        label: Area or trip region
         type: string
       - name: bestFor
+        label: Best for
         type: string
       - name: tags
+        label: Trip tags
         type: string
         list: true
       - name: image
+        label: Trip image path
         type: string
       - name: mapLabel
+        label: Button text
         type: string
       - name: mapUrl
+        label: Button link
         type: string
       - name: body
+        label: Full trip description
         type: rich-text
         options:
           format: markdown

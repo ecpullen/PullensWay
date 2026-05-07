@@ -5,9 +5,6 @@ import site from "../data/site.json";
 import { getPageBySlug } from "../lib/content";
 
 const page = await getPageBySlug("resources");
-const hasWorkingMap =
-  Boolean(site.mapEmbedUrl) &&
-  !site.mapEmbedUrl.includes("1X0Jj2n0xgTgT9vP3b4l0vE9wJ7Q");
 
 if (!page) {
   throw new Error("Resources page content is missing.");
@@ -29,37 +26,27 @@ const { Content } = await render(page);
     </article>
 
     <aside class="map-card">
-      <p class="eyebrow">Meeting Areas and Launches</p>
-      <h2 class="map-card__title">Trailheads, launch points, and trip regions.</h2>
+      <p class="eyebrow">Meeting Details</p>
+      <h2 class="map-card__title">Everything guests need before they arrive.</h2>
       <p class="map-card__intro">
-        Add the real boating launches, fishing access points, and trail meeting areas here once your working map is ready.
+        Use this panel for the practical information guests care about most before a trip is confirmed.
       </p>
 
-      {
-        hasWorkingMap ? (
-          <iframe
-            title="Pullen's Way Map"
-            src={site.mapEmbedUrl}
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        ) : (
-          <div class="map-placeholder">
-            <div class="map-placeholder__badge">Map setup in progress</div>
-            <h3>Use this area for your real trip map once launch points are finalized.</h3>
-            <p>
-              For now, this card avoids showing a broken embed. Replace the placeholder map URL in
-              `src/data/site.json` with a real Google Maps or Google My Maps embed link when you have one.
-            </p>
-            <ul class="tag-list" aria-label="Map use cases">
-              <li>Boat Launches</li>
-              <li>Trailheads</li>
-              <li>Fishing Access</li>
-              <li>Meeting Spots</li>
-            </ul>
-            <a class="button button--secondary" href={`mailto:${site.contactEmail}`}>Ask for meeting details</a>
-          </div>
-        )
-      }
+      <div class="map-placeholder">
+        <div class="map-placeholder__badge">Simple and clear</div>
+        <h3>Meeting spots are shared when the trip is booked.</h3>
+        <p>
+          Exact launch points, trailheads, and meetup details can vary by weather, season, trail conditions,
+          and the type of trip being booked.
+        </p>
+        <ul class="tag-list" aria-label="Meeting details">
+          <li>{site.location}</li>
+          <li>Launch Point Confirmed Later</li>
+          <li>Trailhead Confirmed Later</li>
+          <li>Weather Dependent</li>
+        </ul>
+        <a class="button button--secondary" href={`mailto:${site.contactEmail}`}>Ask about trip details</a>
+      </div>
     </aside>
   </section>
 
@@ -82,9 +69,9 @@ const { Content } = await render(page);
     <div class="callout">
       <div>
         <p class="eyebrow">Trip Readiness</p>
-        <h2>Use this page as the operational hub for launch points, waivers, weather notes, and checklists.</h2>
+        <h2>Use this page for guest prep, meeting details, weather notes, and what to bring.</h2>
       </div>
-      <p>Once the real business details are ready, this page can carry the practical information guests check right before they head out.</p>
+      <p>This page works best as a simple pre-trip checklist guests can read quickly from their phone.</p>
     </div>
   </section>
 </BaseLayout>
